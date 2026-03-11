@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast - Big News Costa Esmeralda</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Podcast do Big News. Entrevistas exclusivas com autoridades, análises aprofundadas e transmissões ao vivo da Costa Esmeralda.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Big News Costa Esmeralda">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bignewssc.com.br/podcast.html">
+    <meta property="og:title" content="Podcast - Big News Costa Esmeralda">
+    <meta property="og:description" content="Entrevistas exclusivas e transmissões ao vivo">
+    <meta property="og:image" content="https://bignewssc.com.br/images/social-podcast.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bignewssc.com.br/podcast.html">
+    <meta name="twitter:title" content="Podcast - Big News">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bignewssc.com.br/podcast.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Preparação para App -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Big News">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <style>
+        /* ===== VARIÁVEIS ===== */
+        :root {
+            --primary: #1a365d;
+            --primary-dark: #0f2942;
+            --primary-light: #2c5282;
+            --secondary: #475569;
+            --accent: #b8860b;
+            --accent-light: #d4a017;
+            --bg-paper: #fafaf9;
+            --bg-studio: #0a0a0a;
+            --text-dark: #1f2937;
+            --text-regular: #374151;
+            --text-light: #4b5563;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --success: #059669;
+            --error: #dc2626;
+            --live: #dc2626;
+            --warning: #d97706;
+            --info: #2563eb;
+            --whatsapp: #25D366;
+            --facebook: #1877f2;
+            --twitter: #000000;
+            --telegram: #0088cc;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --focus-outline: 3px solid #b8860b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            background-color: var(--bg-paper);
+            color: var(--text-regular);
+            line-height: 1.6;
+        }
+
+        :focus-visible {
+            outline: var(--focus-outline);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 10000;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* HEADER */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow);
+        }
+
+        .header-top {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header-top-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .logo-icon img {
+            width: 48px;
+            height: 48px;
+            display: block;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* NAVEGAÇÃO */
+        .nav-desktop {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-light);
+        }
+
+        .btn-sm {
+            padding: 0.375rem 0.75rem;
+        }
+
+        /* MAIN */
+        main {
+            margin-top: 120px;
+            min-height: calc(100vh - 120px);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        /* ESPAÇO AO VIVO */
+        .live-space {
+            display: none;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--live) 0%, #b91c1c 100%);
+        }
+        
+        .live-space.active {
+            display: block;
+        }
+        
+        .live-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .live-player {
+            background: var(--bg-studio);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .live-badge-player {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: white;
+            color: var(--live);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+        }
+        
+        .live-badge-player i {
+            color: var(--live);
+            animation: pulse 2s infinite;
+        }
+        
+        .live-play-icon {
+            font-size: 5rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .live-player p {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            opacity: 0.8;
+        }
+        
+        .live-info {
+            padding: 2rem;
+            color: white;
+        }
+        
+        .live-info h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .live-info p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .live-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .live-watch-btn {
+            background: white;
+            color: var(--live);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .live-close-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* SEÇÃO AO VIVO (quando não há live) */
+        .live-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            color: var(--white);
+            border: 1px solid #404040;
+        }
+
+        .live-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .live-badge {
+            background: var(--live);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .live-badge i {
+            font-size: 0.75rem;
+            animation: pulse 2s infinite;
+        }
+
+        .live-studio {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .live-video-placeholder {
+            background: var(--bg-studio);
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #404040;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .live-video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.03) 0px,
+                rgba(255,255,255,0.03) 20px,
+                rgba(255,255,255,0.06) 20px,
+                rgba(255,255,255,0.06) 40px
+            );
+        }
+
+        .live-camera-icon {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            z-index: 1;
+        }
+
+        .live-video-placeholder p {
+            color: #999;
+            font-family: 'Inter', sans-serif;
+            z-index: 1;
+        }
+
+        .live-info-text {
+            padding: 1rem;
+        }
+
+        .live-info-text h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .live-info-text p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .live-guest {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .live-guest-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .live-guest-info h4 {
+            font-size: 0.875rem;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        .live-guest-info p {
+            font-size: 1.125rem;
+            color: var(--white);
+            margin: 0;
+        }
+
+        .live-schedule {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #404040;
+        }
+
+        .live-schedule h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            color: #ccc;
+            font-size: 0.9375rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* PODCASTS GRAVADOS */
+        .podcast-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .podcast-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .podcast-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .podcast-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .podcast-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .podcast-card:hover .podcast-overlay {
+            opacity: 1;
+        }
+
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .podcast-content {
+            padding: 1.5rem;
+        }
+
+        .podcast-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8125rem;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 0.75rem;
+        }
+
+        .podcast-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .podcast-excerpt {
+            color: var(--text-light);
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+
+        .podcast-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .podcast-duration {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* COMPARTILHAR */
+        .share-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .share-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .share-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .share-whatsapp { background: var(--whatsapp); color: white; }
+        .share-facebook { background: var(--facebook); color: white; }
+        .share-twitter { background: var(--twitter); color: white; }
+        .share-telegram { background: var(--telegram); color: white; }
+
+        /* NEWSLETTER WIDGET (oculto) */
+        .newsletter-widget {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+        
+        .newsletter-widget .widget-title {
+            color: var(--white);
+            border-bottom-color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-widget p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .newsletter-widget input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-widget input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .newsletter-widget button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        /* ESTÚDIO BIG NEWS */
+        .studio-section {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 0;
+            margin-top: 2rem;
+            border-radius: 12px;
+        }
+
+        .studio-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .studio-info h2 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .studio-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .studio-features li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .studio-features i {
+            color: var(--accent);
+        }
+
+        .studio-image {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed var(--accent);
+        }
+
+        .studio-image i {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo-title {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.9;
+            margin: 1rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9375rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            opacity: 0.8;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        /* MOBILE DRAWER */
+        .mobile-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.5); z-index: 200;
+        }
+        .mobile-overlay.open { display: block; }
+        .mobile-drawer {
+            position: fixed; top: 0; left: -280px; width: 280px; height: 100vh;
+            background: var(--primary-dark); z-index: 201;
+            transition: left 0.3s ease; overflow-y: auto; padding: 0 0 40px;
+        }
+        .mobile-drawer.open { left: 0; }
+        .mobile-drawer-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-drawer-close {
+            background: none; border: none; color: rgba(255,255,255,0.7);
+            font-size: 20px; cursor: pointer; padding: 4px;
+        }
+        .mobile-drawer-close:hover { color: #fff; }
+        .mobile-nav-links { padding: 12px 0; }
+        .mobile-nav-link {
+            display: flex; align-items: center; gap: 10px;
+            padding: 13px 20px; color: rgba(255,255,255,0.8);
+            text-decoration: none; font-family: 'Inter', sans-serif;
+            font-size: 15px; font-weight: 500; transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .mobile-nav-link:hover { background: rgba(255,255,255,0.06); color: #fff; }
+        .mobile-nav-link.active { color: var(--accent); border-left-color: var(--accent); background: rgba(184,134,11,0.08); }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 1024px) {
+            .live-studio {
+                grid-template-columns: 1fr;
+            }
+            
+            .podcast-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .studio-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .live-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .live-buttons {
+                flex-direction: column;
+            }
+            
+            .share-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Pular para conteúdo principal</a>
+
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="header-top-content">
+                <span><i class="fas fa-map-marker-alt"></i> Costa Esmeralda, SC</span>
+                <span><i class="fas fa-clock"></i> <span id="current-date"></span></span>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="icon-192x192.png" alt="Big News" width="48" height="48">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Big News</span>
+                    <span class="logo-subtitle">Costa Esmeralda</span>
+                </div>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Menu principal">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="noticias.html" class="nav-link">Notícias</a>
+                <a href="esportes.html" class="nav-link">Esportes</a>
+                <a href="politica.html" class="nav-link">Política</a>
+                <a href="fact-checking.html" class="nav-link">Fact-Checking</a>
+                <a href="analises.html" class="nav-link">Análises</a>
+                <a href="podcast.html" class="nav-link active" aria-current="page">Podcast</a>
+                <a href="explica.html" class="nav-link">Explica</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-outline btn-sm"><i class="fas fa-search"></i><span class="sr-only">Buscar</span></button>
+                <button class="btn btn-primary btn-sm" onclick="scrollToNewsletter()">
+                    <i class="fas fa-envelope"></i><span class="sr-only">Newsletter</span>
+                </button>
+                <button class="btn btn-outline btn-sm" aria-label="Menu" id="mobile-menu-button" style="display:none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay" role="presentation"></div>
+    <nav class="mobile-drawer" id="mobile-drawer" aria-label="Menu mobile">
+        <div class="mobile-drawer-header">
+            <div class="logo-title" style="font-size:1.2rem;color:#fff">Big News</div>
+            <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Fechar menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i>Home</a>
+            <a href="noticias.html" class="mobile-nav-link"><i class="fas fa-newspaper"></i>Notícias</a>
+            <a href="esportes.html" class="mobile-nav-link"><i class="fas fa-trophy"></i>Esportes</a>
+            <a href="politica.html" class="mobile-nav-link"><i class="fas fa-landmark"></i>Política</a>
+            <a href="fact-checking.html" class="mobile-nav-link"><i class="fas fa-check-circle"></i>Fact-Checking</a>
+            <a href="analises.html" class="mobile-nav-link"><i class="fas fa-chart-line"></i>Análises</a>
+            <a href="podcast.html" class="mobile-nav-link active"><i class="fas fa-microphone"></i>Podcast</a>
+            <a href="explica.html" class="mobile-nav-link"><i class="fas fa-lightbulb"></i>Explica</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Podcast Big News</h1>
+                    <p>Entrevistas exclusivas, debates e transmissões ao vivo da Costa Esmeralda</p>
+                </div>
+
+                <!-- ESPAÇO AO VIVO (Podcast) -->
+                <div class="live-space" id="liveSpace">
+                    <div class="live-grid">
+                        <div class="live-player">
+                            <span class="live-badge-player">
+                                <i class="fas fa-circle"></i> AO VIVO AGORA
+                            </span>
+                            <i class="fas fa-play-circle live-play-icon"></i>
+                            <p>Clique para assistir</p>
+                        </div>
+                        
+                        <div class="live-info">
+                            <h3 id="liveTitle">Carregando...</h3>
+                            <p id="liveDescription">Acompanhe entrevistas e debates ao vivo</p>
+                            
+                            <div class="live-guest" id="liveGuestContainer" style="margin: 1rem 0; display: none;">
+                                <div class="live-guest-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="live-guest-info">
+                                    <h4>CONVIDADO</h4>
+                                    <p id="liveGuest">Carregando...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="live-buttons">
+                                <a href="#" id="liveWatchBtn" class="live-watch-btn">
+                                    <i class="fas fa-play"></i> Assistir agora
+                                </a>
+                                <button class="live-close-btn" onclick="document.getElementById('liveSpace').classList.remove('active')">
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEÇÃO AO VIVO (padrão) -->
+                <div class="live-section" id="defaultLiveSection">
+                    <div class="live-header">
+                        <span class="live-badge">
+                            <i class="fas fa-circle"></i> PRÓXIMO PROGRAMA
+                        </span>
+                        <span>Estúdio Big News - Itapema</span>
+                    </div>
+                    
+                    <div class="live-studio">
+                        <div class="live-video-placeholder">
+                            <i class="fas fa-video live-camera-icon"></i>
+                            <p>Próxima transmissão em breve</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Quartas-feiras, 20h</p>
+                        </div>
+                        
+                        <div class="live-info-text">
+                            <h3>Entrevista com autoridades locais</h3>
+                            <p>Toda semana um convidado especial para discutir os temas mais importantes da região.</p>
+                            
+                            <div class="live-guest">
+                                <div class="live-guest-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="live-guest-info">
+                                    <h4>PRÓXIMO CONVIDADO</h4>
+                                    <p>Prefeito de Itapema</p>
+                                </div>
+                            </div>
+
+                            <div class="live-guest">
+                                <div class="live-guest-icon">
+                                    <i class="fas fa-microphone-alt"></i>
+                                </div>
+                                <div class="live-guest-info">
+                                    <h4>ENTREVISTADOR</h4>
+                                    <p>Carlos Mendes - Editor-chefe</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 1rem; margin: 2rem 0;">
+                                <button class="btn btn-accent" onclick="document.getElementById('liveSpace').style.display='block'">
+                                    <i class="fas fa-bell"></i> Lembrar-me
+                                </button>
+                            </div>
+
+                            <div class="live-schedule">
+                                <h4>Próximas entrevistas:</h4>
+                                <div class="schedule-item">
+                                    <span>📍 Porto Belo - Vereadora Ana Oliveira</span>
+                                    <span>Amanhã, 19h</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span>📍 Bombinhas - Secretário de Turismo</span>
+                                    <span>Quinta, 10h</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span>📍 Itapema - Líder da oposição</span>
+                                    <span>Sexta, 18h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PODCASTS GRAVADOS -->
+                <h2 style="font-size: 2rem; color: var(--primary); margin: 3rem 0 2rem;">Episódios Recentes</h2>
+                
+                <div class="podcast-grid">
+                    <article class="podcast-card">
+                        <div class="podcast-image">
+                            <span style="position: absolute; top: 1rem; left: 1rem; background: var(--accent); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem;">ENTREVISTA</span>
+                            <div class="podcast-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-user-tie" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="podcast-content">
+                            <div class="podcast-meta">
+                                <span><i class="fas fa-calendar"></i> 05/03/2026</span>
+                                <span><i class="fas fa-headphones"></i> 2.340 ouvintes</span>
+                            </div>
+                            <h3 class="podcast-title">"Precisamos de mais transparência na Câmara" - Entrevista com líder comunitário</h3>
+                            <p class="podcast-excerpt">Conversa sobre participação popular, acesso a informações públicas e desafios da sociedade civil.</p>
+                            <div class="podcast-footer">
+                                <span class="podcast-duration"><i class="fas fa-clock"></i> 54 min</span>
+                                <button class="btn btn-outline btn-sm">Ouvir agora</button>
+                            
+                            <!-- COMPARTILHAMENTO DO EPISÓDIO -->
+                            <div class="materia-share">
+                                <span style="font-size:0.75rem; color:var(--text-light);"><i class="fas fa-share-alt"></i> Compartilhar:</span>
+                                <button class="materia-share-btn share-whatsapp" onclick="window.open('https://wa.me/?text=' + encodeURIComponent('Confira este podcast do Big News: ' + window.location.href), '_blank')" data-tooltip="WhatsApp" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="materia-share-btn share-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Facebook" aria-label="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="materia-share-btn share-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Confira este podcast do Big News') + '&url=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Twitter" aria-label="Compartilhar no Twitter"><i class="fab fa-twitter"></i></button>
+                                <button class="materia-share-btn share-telegram" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent('Confira este podcast do Big News'), '_blank')" data-tooltip="Telegram" aria-label="Compartilhar no Telegram"><i class="fab fa-telegram-plane"></i></button>
+                                <button class="materia-share-btn share-link" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copiado!')" data-tooltip="Copiar link" aria-label="Copiar link"><i class="fas fa-link"></i></button>
+                            </div>
+</div>
+                        </div>
+                    </article>
+
+                    <article class="podcast-card">
+                        <div class="podcast-image" style="background: linear-gradient(135deg, #b8860b 0%, #d4a017 100%);">
+                            <span style="position: absolute; top: 1rem; left: 1rem; background: var(--accent); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem;">DEBATE</span>
+                            <div class="podcast-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-users" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="podcast-content">
+                            <div class="podcast-meta">
+                                <span><i class="fas fa-calendar"></i> 28/02/2026</span>
+                                <span><i class="fas fa-headphones"></i> 4.120 ouvintes</span>
+                            </div>
+                            <h3 class="podcast-title">Mesa-redonda: O futuro do zoneamento urbano na Costa Esmeralda</h3>
+                            <p class="podcast-excerpt">Arquitetos, vereadores e moradores debatem o crescimento desordenado e soluções possíveis.</p>
+                            <div class="podcast-footer">
+                                <span class="podcast-duration"><i class="fas fa-clock"></i> 1h 28min</span>
+                                <button class="btn btn-outline btn-sm">Ouvir agora</button>
+                            
+                            <!-- COMPARTILHAMENTO DO EPISÓDIO -->
+                            <div class="materia-share">
+                                <span style="font-size:0.75rem; color:var(--text-light);"><i class="fas fa-share-alt"></i> Compartilhar:</span>
+                                <button class="materia-share-btn share-whatsapp" onclick="window.open('https://wa.me/?text=' + encodeURIComponent('Confira este podcast do Big News: ' + window.location.href), '_blank')" data-tooltip="WhatsApp" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="materia-share-btn share-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Facebook" aria-label="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="materia-share-btn share-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Confira este podcast do Big News') + '&url=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Twitter" aria-label="Compartilhar no Twitter"><i class="fab fa-twitter"></i></button>
+                                <button class="materia-share-btn share-telegram" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent('Confira este podcast do Big News'), '_blank')" data-tooltip="Telegram" aria-label="Compartilhar no Telegram"><i class="fab fa-telegram-plane"></i></button>
+                                <button class="materia-share-btn share-link" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copiado!')" data-tooltip="Copiar link" aria-label="Copiar link"><i class="fas fa-link"></i></button>
+                            </div>
+</div>
+                        </div>
+                    </article>
+
+                    <article class="podcast-card">
+                        <div class="podcast-image" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);">
+                            <span style="position: absolute; top: 1rem; left: 1rem; background: var(--accent); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem;">ANÁLISE</span>
+                            <div class="podcast-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-chart-line" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="podcast-content">
+                            <div class="podcast-meta">
+                                <span><i class="fas fa-calendar"></i> 20/02/2026</span>
+                                <span><i class="fas fa-headphones"></i> 3.890 ouvintes</span>
+                            </div>
+                            <h3 class="podcast-title">Eleições 2026: cenário político em Santa Catarina</h3>
+                            <p class="podcast-excerpt">Análise das pré-candidaturas, alianças e desafios para os próximos pleitos na região.</p>
+                            <div class="podcast-footer">
+                                <span class="podcast-duration"><i class="fas fa-clock"></i> 1h 12min</span>
+                                <button class="btn btn-outline btn-sm">Ouvir agora</button>
+                            
+                            <!-- COMPARTILHAMENTO DO EPISÓDIO -->
+                            <div class="materia-share">
+                                <span style="font-size:0.75rem; color:var(--text-light);"><i class="fas fa-share-alt"></i> Compartilhar:</span>
+                                <button class="materia-share-btn share-whatsapp" onclick="window.open('https://wa.me/?text=' + encodeURIComponent('Confira este podcast do Big News: ' + window.location.href), '_blank')" data-tooltip="WhatsApp" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="materia-share-btn share-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Facebook" aria-label="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="materia-share-btn share-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Confira este podcast do Big News') + '&url=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Twitter" aria-label="Compartilhar no Twitter"><i class="fab fa-twitter"></i></button>
+                                <button class="materia-share-btn share-telegram" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent('Confira este podcast do Big News'), '_blank')" data-tooltip="Telegram" aria-label="Compartilhar no Telegram"><i class="fab fa-telegram-plane"></i></button>
+                                <button class="materia-share-btn share-link" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copiado!')" data-tooltip="Copiar link" aria-label="Copiar link"><i class="fas fa-link"></i></button>
+                            </div>
+</div>
+                        </div>
+                    </article>
+
+                    <article class="podcast-card">
+                        <div class="podcast-image" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+                            <span style="position: absolute; top: 1rem; left: 1rem; background: var(--accent); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem;">MEIO AMBIENTE</span>
+                            <div class="podcast-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <i class="fas fa-water" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="podcast-content">
+                            <div class="podcast-meta">
+                                <span><i class="fas fa-calendar"></i> 15/02/2026</span>
+                                <span><i class="fas fa-headphones"></i> 2.760 ouvintes</span>
+                            </div>
+                            <h3 class="podcast-title">Despoluição da Baía: promessa ou realidade?</h3>
+                            <p class="podcast-excerpt">Especialistas discutem os projetos em andamento e os impactos ambientais na região.</p>
+                            <div class="podcast-footer">
+                                <span class="podcast-duration"><i class="fas fa-clock"></i> 46 min</span>
+                                <button class="btn btn-outline btn-sm">Ouvir agora</button>
+                            
+                            <!-- COMPARTILHAMENTO DO EPISÓDIO -->
+                            <div class="materia-share">
+                                <span style="font-size:0.75rem; color:var(--text-light);"><i class="fas fa-share-alt"></i> Compartilhar:</span>
+                                <button class="materia-share-btn share-whatsapp" onclick="window.open('https://wa.me/?text=' + encodeURIComponent('Confira este podcast do Big News: ' + window.location.href), '_blank')" data-tooltip="WhatsApp" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="materia-share-btn share-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Facebook" aria-label="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="materia-share-btn share-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Confira este podcast do Big News') + '&url=' + encodeURIComponent(window.location.href), '_blank')" data-tooltip="Twitter" aria-label="Compartilhar no Twitter"><i class="fab fa-twitter"></i></button>
+                                <button class="materia-share-btn share-telegram" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent('Confira este podcast do Big News'), '_blank')" data-tooltip="Telegram" aria-label="Compartilhar no Telegram"><i class="fab fa-telegram-plane"></i></button>
+                                <button class="materia-share-btn share-link" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copiado!')" data-tooltip="Copiar link" aria-label="Copiar link"><i class="fas fa-link"></i></button>
+                            </div>
+</div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- COMPARTILHAR PÁGINA -->
+                <div class="share-container">
+                    <span class="share-label">Compartilhe esta página:</span>
+                    <div class="share-buttons">
+                        <a href="https://wa.me/?text=Confira%20os%20podcasts%20do%20Big%20News%20-%20Costa%20Esmeralda%20https%3A%2F%2Fbignewssc.com.br%2Fpodcast.html" target="_blank" class="share-btn share-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbignewssc.com.br%2Fpodcast.html" target="_blank" class="share-btn share-facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?text=Confira%20os%20podcasts%20do%20Big%20News%20-%20Costa%20Esmeralda&url=https%3A%2F%2Fbignewssc.com.br%2Fpodcast.html" target="_blank" class="share-btn share-twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/share/url?url=https%3A%2F%2Fbignewssc.com.br%2Fpodcast.html&text=Confira%20os%20podcasts%20do%20Big%20News%20-%20Costa%20Esmeralda" target="_blank" class="share-btn share-telegram"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+
+                <!-- ESTÚDIO BIG NEWS -->
+                <div class="studio-section">
+                    <div class="container">
+                        <div class="studio-content">
+                            <div class="studio-info">
+                                <h2>Estúdio Big News</h2>
+                                <p>Um espaço preparado para receber autoridades, especialistas e lideranças comunitárias para entrevistas aprofundadas e debates relevantes.</p>
+                                
+                                <ul class="studio-features">
+                                    <li><i class="fas fa-check-circle"></i> Estrutura profissional de áudio e vídeo</li>
+                                    <li><i class="fas fa-check-circle"></i> Transmissão ao vivo para YouTube e redes sociais</li>
+                                    <li><i class="fas fa-check-circle"></i> Mediação independente e apartidária</li>
+                                    <li><i class="fas fa-check-circle"></i> Espaço para participação do público</li>
+                                </ul>
+
+                                <button class="btn btn-accent">
+                                    <i class="fas fa-calendar-plus"></i> Agendar participação
+                                </button>
+                            </div>
+                            <div class="studio-image">
+                                <i class="fas fa-microphone-alt"></i>
+                                <h3 style="color: var(--white); margin: 1rem 0;">Seja nosso convidado</h3>
+                                <p style="color: #ccc;">Autoridades, especialistas e lideranças podem solicitar espaço para entrevistas.</p>
+                                <button class="btn btn-outline" style="border-color: var(--white); color: var(--white); margin-top: 1rem;">
+                                    Quero participar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- NEWSLETTER (oculto mas funcional) -->
+    <div style="display: none;" id="newsletter">
+        <div class="newsletter-widget">
+            <h3 class="widget-title">
+                <i class="fas fa-envelope-open-text"></i>
+                Newsletter Semanal
+            </h3>
+            <p>Receba toda quarta-feira, às 7h, o resumo da semana com os melhores episódios e entrevistas exclusivas.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i>
+                    Assinar gratuitamente
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-title" style="font-size:1.875rem;">Big News</div>
+                    <p>Portal de notícias e análises da Costa Esmeralda. Documentamos o presente para informar o futuro da nossa região.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Seções</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="esportes.html">Esportes</a></li>
+                        <li><a href="politica.html">Política</a></li>
+                        <li><a href="fact-checking.html">Fact-Checking</a></li>
+                        <li><a href="analises.html">Análises</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="explica.html">Explica</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Região</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Itapema</a></li>
+                        <li><a href="#">Porto Belo</a></li>
+                        <li><a href="#">Bombinhas</a></li>
+                        <li><a href="#">Costa Esmeralda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contato@bignewssc.com.br"><i class="fas fa-envelope"></i>contato@bignewssc.com.br</a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Big News. Todos os direitos reservados.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Atualizar data
+        const dateEl = document.getElementById('current-date');
+        if (dateEl) {
+            dateEl.textContent = new Date().toLocaleDateString('pt-BR', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header?.classList.add('scrolled');
+            } else {
+                header?.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll para newsletter
+        window.scrollToNewsletter = function() {
+            const newsletter = document.getElementById('newsletter');
+            if (newsletter) {
+                newsletter.style.display = 'block';
+                newsletter.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    const input = newsletter.querySelector('input[type="email"]');
+                    if (input) input.focus();
+                }, 500);
+            }
+        };
+
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = newsletterForm.querySelector('input[type="email"]');
+                const email = emailInput.value;
+                
+                if (!email || !email.includes('@')) {
+                    alert('Por favor, insira um e-mail válido.');
+                    return;
+                }
+                
+                const button = newsletterForm.querySelector('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Obrigado por assinar! Você receberá a Newsletter Semanal às quartas-feiras às 7h.');
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    emailInput.value = '';
+                    
+                    // Esconder newsletter após envio
+                    document.getElementById('newsletter').style.display = 'none';
+                }, 1000);
+            });
+        }
+
+        // Mobile Drawer
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileDrawer  = document.getElementById('mobile-drawer');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileClose   = document.getElementById('mobile-drawer-close');
+        
+        function openDrawer() {
+            mobileDrawer?.classList.add('open');
+            mobileOverlay?.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeDrawer() {
+            mobileDrawer?.classList.remove('open');
+            mobileOverlay?.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        
+        mobileMenuBtn?.addEventListener('click', openDrawer);
+        mobileClose?.addEventListener('click', closeDrawer);
+        mobileOverlay?.addEventListener('click', closeDrawer);
+        
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeDrawer();
+        });
+
+        const toggleMobileBtn = () => {
+            if (mobileMenuBtn) {
+                mobileMenuBtn.style.display = window.innerWidth <= 768 ? 'inline-flex' : 'none';
+            }
+        };
+        
+        window.addEventListener('resize', () => {
+            toggleMobileBtn();
+            if (window.innerWidth > 768) closeDrawer();
+        });
+        
+        toggleMobileBtn();
+
+        // VERIFICAR STATUS AO VIVO (Podcast)
+        function checkLiveStatus() {
+            const liveSpace = document.getElementById('liveSpace');
+            const defaultLiveSection = document.getElementById('defaultLiveSection');
+            const liveTitle = document.getElementById('liveTitle');
+            const liveDesc = document.getElementById('liveDescription');
+            const liveGuest = document.getElementById('liveGuest');
+            const liveGuestContainer = document.getElementById('liveGuestContainer');
+            const liveWatchBtn = document.getElementById('liveWatchBtn');
+            
+            fetch('/live-status.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.live && data.program === 'podcast' && liveSpace) {
+                        liveSpace.classList.add('active');
+                        if (defaultLiveSection) defaultLiveSection.style.display = 'none';
+                        
+                        if (liveTitle) liveTitle.textContent = data.title;
+                        if (liveDesc) liveDesc.textContent = data.description || 'Acompanhe entrevistas e debates ao vivo';
+                        if (liveWatchBtn) liveWatchBtn.href = data.url;
+                        
+                        if (data.guest && liveGuest && liveGuestContainer) {
+                            liveGuest.textContent = data.guest;
+                            liveGuestContainer.style.display = 'flex';
+                        } else if (liveGuestContainer) {
+                            liveGuestContainer.style.display = 'none';
+                        }
+                    } else if (liveSpace) {
+                        liveSpace.classList.remove('active');
+                        if (defaultLiveSection) defaultLiveSection.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.log('Erro ao verificar live:', error);
+                    if (liveSpace) liveSpace.classList.remove('active');
+                    if (defaultLiveSection) defaultLiveSection.style.display = 'block';
+                });
+        }
+
+        // Verificar na carga da página e a cada 30 segundos
+        document.addEventListener('DOMContentLoaded', () => {
+            checkLiveStatus();
+            setInterval(checkLiveStatus, 30000);
+        });
+
+        // Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(() => {});
+            });
+        }
+    </script>
+    <script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ao Vivo - Big News Costa Esmeralda</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Acompanhe ao vivo as transmissões do Big News: notícias, esportes e entrevistas exclusivas da Costa Esmeralda.">
+    
+    <!-- Favicon e CSS (mesmo padrão) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Fonts e CSS existente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Mesmo CSS do index.html (copie e cole) */
+        :root {
+            --primary: #1a365d;
+            --primary-dark: #0f2942;
+            --primary-light: #2c5282;
+            --accent: #b8860b;
+            --accent-light: #d4a017;
+            --bg-paper: #fafaf9;
+            --text-regular: #374151;
+            --text-light: #4b5563;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --success: #059669;
+            --error: #dc2626;
+            --live: #dc2626;
+        }
+        
+        /* Estilos adicionais para live */
+        .live-header {
+            background: linear-gradient(135deg, var(--error) 0%, #b91c1c 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .live-badge-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: white;
+            color: var(--error);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        
+        .live-badge-large i {
+            color: var(--error);
+            animation: pulse 2s infinite;
+        }
+        
+        .player-container {
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .player-placeholder {
+            aspect-ratio: 16/9;
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .chat-container {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+        
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+        
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .program-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .program-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-regular);
+        }
+        
+        .program-tab:hover {
+            border-color: var(--primary);
+            background: var(--bg-paper);
+        }
+        
+        .program-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .program-tab.live {
+            position: relative;
+            border-left: 4px solid var(--error);
+        }
+        
+        .program-tab.live::after {
+            content: "AO VIVO";
+            position: absolute;
+            top: -8px;
+            right: 8px;
+            background: var(--error);
+            color: white;
+            font-size: 0.625rem;
+            padding: 0.125rem 0.25rem;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Pular para conteúdo principal</a>
+
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="header-top-content">
+                <span><i class="fas fa-map-marker-alt"></i> Costa Esmeralda, SC</span>
+                <span><i class="fas fa-clock"></i> <span id="current-date"></span></span>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">BN</div>
+                <div class="logo-text">
+                    <span class="logo-title">Big News</span>
+                    <span class="logo-subtitle">Costa Esmeralda</span>
+                </div>
+            </a>
+
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="noticias.html" class="nav-link">Notícias</a>
+                <a href="esportes.html" class="nav-link">Esportes</a>
+                <a href="politica.html" class="nav-link">Política</a>
+                <a href="fact-checking.html" class="nav-link">Fact-Checking</a>
+                <a href="analises.html" class="nav-link">Análises</a>
+                <a href="podcast.html" class="nav-link">Podcast</a>
+                <a href="explica.html" class="nav-link">Explica</a>
+                <a href="live.html" class="nav-link active">Ao Vivo</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-outline btn-sm"><i class="fas fa-search"></i><span class="sr-only">Buscar</span></button>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i><span class="sr-only">Newsletter</span></button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HEADER AO VIVO -->
+        <div class="live-header">
+            <div class="container">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+                    <div>
+                        <div class="live-badge-large">
+                            <i class="fas fa-circle"></i> AO VIVO
+                        </div>
+                        <h1 style="color: white; margin: 1rem 0 0.5rem;">Big News Ao Vivo</h1>
+                        <p style="color: rgba(255,255,255,0.9);">Acompanhe nossos programas semanais: Notícias, Esportes e Podcast</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-accent" style="background: white; color: var(--error);" onclick="window.location.href='index.html'">
+                            <i class="fas fa-home"></i> Voltar ao site
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <!-- PROGRAMAS TABS -->
+                <div class="program-tabs">
+                    <a href="live.html?program=noticias" class="program-tab active" id="tab-noticias">Notícias</a>
+                    <a href="live.html?program=esportes" class="program-tab" id="tab-esportes">Esportes</a>
+                    <a href="live.html?program=podcast" class="program-tab" id="tab-podcast">Podcast</a>
+                </div>
+
+                <!-- PLAYER + CHAT -->
+                <div style="display: grid; grid-template-columns: 1fr 350px; gap: 2rem;">
+                    <!-- PLAYER -->
+                    <div class="player-container">
+                        <div class="player-placeholder" id="player-container">
+                            <!-- Conteúdo carregado via JavaScript -->
+                        </div>
+                        
+                        <!-- INFORMAÇÕES DO PROGRAMA -->
+                        <div style="padding: 1.5rem; background: white;">
+                            <h2 id="program-title" style="color: var(--primary); margin-bottom: 0.5rem;">Notícias ao Vivo</h2>
+                            <p id="program-description" style="color: var(--text-light); margin-bottom: 1rem;">Acompanhe as principais notícias da Costa Esmeralda em tempo real.</p>
+                            <div style="display: flex; gap: 1rem;">
+                                <span style="background: var(--bg-paper); padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.875rem;">
+                                    <i class="fas fa-calendar"></i> Quartas-feiras, 20h
+                                </span>
+                                <span style="background: var(--bg-paper); padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.875rem;">
+                                    <i class="fas fa-clock"></i> Duração: 60 min
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHAT -->
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <i class="fas fa-comments"></i> Chat ao Vivo
+                        </div>
+                        <div class="chat-messages" id="chat-messages">
+                            <div style="color: var(--text-light); text-align: center; padding: 2rem;">
+                                <i class="fas fa-comment-dots" style="font-size: 2rem; opacity: 0.5; margin-bottom: 0.5rem;"></i>
+                                <p>Chat disponível durante a transmissão</p>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Digite sua mensagem..." style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 4px;" disabled>
+                            <button style="width: 100%; margin-top: 0.5rem; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 4px;" disabled>
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- FOOTER PADRÃO (copiar do index.html) -->
+    </footer>
+
+    <script>
+        // Dados dos programas
+        const programs = {
+            noticias: {
+                title: "Notícias ao Vivo",
+                description: "Acompanhe as principais notícias da Costa Esmeralda em tempo real, com entrevistas e análises.",
+                schedule: "Quartas-feiras, 20h",
+                duration: "60 min",
+                embed: `<iframe width="100%" height="480" src="https://www.youtube.com/embed/live_stream?channel=SEU_CANAL" frameborder="0" allowfullscreen></iframe>`
+            },
+            esportes: {
+                title: "Esportes ao Vivo",
+                description: "Resultados, entrevistas com atletas e cobertura completa do esporte regional.",
+                schedule: "Quintas-feiras, 19h",
+                duration: "45 min",
+                embed: `<iframe width="100%" height="480" src="https://www.youtube.com/embed/live_stream?channel=SEU_CANAL" frameborder="0" allowfullscreen></iframe>`
+            },
+            podcast: {
+                title: "Podcast Big News",
+                description: "Entrevistas exclusivas com autoridades, especialistas e lideranças comunitárias.",
+                schedule: "Sextas-feiras, 18h",
+                duration: "90 min",
+                embed: `<iframe width="100%" height="480" src="https://www.youtube.com/embed/live_stream?channel=SEU_CANAL" frameborder="0" allowfullscreen></iframe>`
+            }
+        };
+
+        // Carregar programa baseado na URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const program = urlParams.get('program') || 'noticias';
+        
+        // Atualizar interface
+        document.getElementById('program-title').textContent = programs[program].title;
+        document.getElementById('program-description').textContent = programs[program].description;
+        document.getElementById('player-container').innerHTML = programs[program].embed;
+        
+        // Atualizar abas
+        document.querySelectorAll('.program-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.getElementById(`tab-${program}`).classList.add('active');
+    </script>
+</body>
+</html>

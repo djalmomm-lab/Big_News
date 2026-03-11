@@ -1,0 +1,8 @@
+{
+  "live": true,
+  "program": "podcast",
+  "title": "Podcast com Prefeito de Itapema",
+  "url": "live.html?program=podcast",
+  "startTime": "2026-03-10T20:00:00-03:00",
+  "thumbnail": "/images/live-podcast.jpg"
+}

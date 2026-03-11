@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo - Big News Costa Esmeralda</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Arquivo completo de notícias, análises e fact-checks da Costa Esmeralda. Todo o conteúdo publicado desde o início do Big News.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Big News Costa Esmeralda">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bignewssc.com.br/arquivo.html">
+    <meta property="og:title" content="Arquivo - Big News Costa Esmeralda">
+    <meta property="og:description" content="Todo o conteúdo publicado desde o início do Big News.">
+    <meta property="og:image" content="https://bignewssc.com.br/images/social-arquivo.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bignewssc.com.br/arquivo.html">
+    <meta name="twitter:title" content="Arquivo - Big News">
+    <meta name="twitter:description" content="Todo o conteúdo publicado">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bignewssc.com.br/arquivo.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <style>
+        /* ===== VARIÁVEIS ===== */
+        :root {
+            --primary: #1a365d;
+            --primary-dark: #0f2942;
+            --primary-light: #2c5282;
+            --secondary: #475569;
+            --accent: #b8860b;
+            --accent-light: #d4a017;
+            --bg-paper: #fafaf9;
+            --text-dark: #1f2937;
+            --text-regular: #374151;
+            --text-light: #4b5563;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --success: #059669;
+            --error: #dc2626;
+            --warning: #d97706;
+            --info: #2563eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --focus-outline: 3px solid #b8860b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            background-color: var(--bg-paper);
+            color: var(--text-regular);
+            line-height: 1.6;
+        }
+
+        :focus-visible {
+            outline: var(--focus-outline);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 10000;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow);
+        }
+
+        .header-top {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header-top-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.25rem;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* ===== NAVEGAÇÃO ===== */
+        .nav-desktop {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-sm {
+            padding: 0.375rem 0.75rem;
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            margin-top: 120px;
+            min-height: calc(100vh - 120px);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        /* ===== ESTATÍSTICAS DO ARQUIVO ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ===== BUSCA AVANÇADA ===== */
+        .search-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .search-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .search-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .search-field label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-field input,
+        .search-field select {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+        }
+
+        .search-btn {
+            padding: 0.75rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            height: 48px;
+        }
+
+        .search-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ===== FILTROS RÁPIDOS ===== */
+        .quick-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-chip {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-chip:hover {
+            background: var(--primary-light);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .filter-chip.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* ===== LINHA DO TEMPO ===== */
+        .timeline {
+            margin: 3rem 0;
+        }
+
+        .timeline-year {
+            margin-bottom: 2rem;
+        }
+
+        .timeline-year h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* ===== CARD DE ARQUIVO ===== */
+        .archive-card {
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .archive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .archive-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 0.75rem;
+        }
+
+        .archive-category {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .archive-date {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .archive-title {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .archive-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .archive-title a:hover {
+            color: var(--accent);
+        }
+
+        .archive-excerpt {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .archive-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8125rem;
+            color: var(--text-light);
+        }
+
+        .archive-stats {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .archive-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* ===== MÊS POR MÊS ===== */
+        .monthly-section {
+            margin: 3rem 0;
+        }
+
+        .monthly-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .monthly-nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .monthly-nav button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .monthly-nav button:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+
+        .month-card {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .month-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .month-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .month-count {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* ===== POPULARES NO ARQUIVO ===== */
+        .popular-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .popular-item {
+            text-align: center;
+        }
+
+        .popular-rank {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+            opacity: 0.5;
+            line-height: 1;
+        }
+
+        .popular-title {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .popular-views {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo-title {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.9;
+            margin: 1rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9375rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            opacity: 0.8;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .search-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .months-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .popular-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .months-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .popular-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .monthly-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    
+        /* COMPARTILHAMENTO */
+        .share-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .share-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9375rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .share-whatsapp { background: #25D366; }
+        .share-facebook { background: #1877f2; }
+        .share-twitter { background: #000000; }
+        .share-telegram { background: #0088cc; }
+        .share-linkedin { background: #0077b5; }
+        .share-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+        /* Compartilhamento por matéria */
+        .materia-share {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border);
+            flex-wrap: wrap;
+        }
+
+        .materia-share-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .materia-share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .materia-share-btn.share-whatsapp { background: #25D366; }
+        .materia-share-btn.share-facebook { background: #1877f2; }
+        .materia-share-btn.share-twitter { background: #000000; }
+        .materia-share-btn.share-telegram { background: #0088cc; }
+        .materia-share-btn.share-linkedin { background: #0077b5; }
+        .materia-share-btn.share-link { background: var(--primary); }
+
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Pular para conteúdo principal</a>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="header-top-content">
+                <span><i class="fas fa-map-marker-alt"></i> Costa Esmeralda, SC</span>
+                <span><i class="fas fa-clock"></i> <span id="current-date"></span></span>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">BN</div>
+                <div class="logo-text">
+                    <span class="logo-title">Big News</span>
+                    <span class="logo-subtitle">Costa Esmeralda</span>
+                </div>
+            </a>
+
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="noticias.html" class="nav-link">Notícias</a>
+                <a href="analises.html" class="nav-link">Análises</a>
+                <a href="fact-checking.html" class="nav-link">Fact-Checking</a>
+                <a href="politica.html" class="nav-link">Política</a>
+                <a href="podcast.html" class="nav-link">Podcast</a>
+                <a href="explica.html" class="nav-link">Explica</a>
+                <a href="arquivo.html" class="nav-link active">Arquivo</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-outline btn-sm"><i class="fas fa-search"></i><span class="sr-only">Buscar</span></button>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i><span class="sr-only">Newsletter</span></button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Arquivo</h1>
+                    <p>Todo o conteúdo publicado desde o início do Big News</p>
+                </div>
+
+                <!-- ESTATÍSTICAS DO ARQUIVO -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">1.247</span>
+                        <span class="stat-label">Matérias publicadas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">89</span>
+                        <span class="stat-label">Fact-checks</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">42</span>
+                        <span class="stat-label">Análises</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Anos de história</span>
+                    </div>
+                </div>
+
+                <!-- BUSCA AVANÇADA -->
+                <div class="search-section">
+                    <h2>Buscar no arquivo</h2>
+                    <div class="search-grid">
+                        <div class="search-field">
+                            <label>Palavra-chave</label>
+                            <input type="text" placeholder="Digite sua busca..." id="search-input">
+                        </div>
+                        <div class="search-field">
+                            <label>Categoria</label>
+                            <select id="search-category">
+                                <option value="">Todas</option>
+                                <option value="noticias">Notícias</option>
+                                <option value="analises">Análises</option>
+                                <option value="fact-checking">Fact-Checking</option>
+                                <option value="politica">Política</option>
+                                <option value="podcast">Podcast</option>
+                                <option value="explica">Explica</option>
+                            </select>
+                        </div>
+                        <div class="search-field">
+                            <label>Período</label>
+                            <select id="search-period">
+                                <option value="">Todo período</option>
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                        <button class="search-btn" id="search-btn"><i class="fas fa-search"></i> Buscar</button>
+                    </div>
+                </div>
+
+                <!-- FILTROS RÁPIDOS -->
+                <div class="quick-filters">
+                    <span class="filter-chip active" data-filter="todos">Todos</span>
+                    <span class="filter-chip" data-filter="noticias">Notícias</span>
+                    <span class="filter-chip" data-filter="analises">Análises</span>
+                    <span class="filter-chip" data-filter="fact-checking">Fact-Checking</span>
+                    <span class="filter-chip" data-filter="politica">Política</span>
+                    <span class="filter-chip" data-filter="podcast">Podcast</span>
+                    <span class="filter-chip" data-filter="explica">Explica</span>
+                </div>
+
+                <!-- LINHA DO TEMPO 2026 -->
+                <div class="timeline">
+                    <div class="timeline-year">
+                        <h3>2026</h3>
+                        <div class="timeline-grid">
+                            <article class="archive-card">
+                                <div class="archive-meta">
+                                    <span class="archive-category">Notícias</span>
+                                    <span class="archive-date"><i class="fas fa-calendar"></i> 05/03/2026</span>
+                                </div>
+                                <h4 class="archive-title">
+                                    <a href="#">Câmara aprova projeto de zoneamento urbano em Itapema</a>
+                                </h4>
+                                <p class="archive-excerpt">Projeto foi aprovado por 9 votos a 2 após três horas de debate.</p>
+                                <div class="archive-footer">
+                                    <span class="archive-stats">
+                                        <span><i class="fas fa-eye"></i> 1.247</span>
+                                        <span><i class="fas fa-comment"></i> 12</span>
+                                    </span>
+                                    <span>Redação</span>
+                                </div>
+                            </article>
+
+                            <article class="archive-card">
+                                <div class="archive-meta">
+                                    <span class="archive-category">Análises</span>
+                                    <span class="archive-date"><i class="fas fa-calendar"></i> 04/03/2026</span>
+                                </div>
+                                <h4 class="archive-title">
+                                    <a href="#">Os 100 dias do novo governo: promessas vs. realidade</a>
+                                </h4>
+                                <p class="archive-excerpt">Análise completa das 12 promessas de campanha do prefeito de Itapema.</p>
+                                <div class="archive-footer">
+                                    <span class="archive-stats">
+                                        <span><i class="fas fa-eye"></i> 987</span>
+                                        <span><i class="fas fa-comment"></i> 8</span>
+                                    </span>
+                                    <span>Carlos Mendes</span>
+                                </div>
+                            </article>
+
+                            <article class="archive-card">
+                                <div class="archive-meta">
+                                    <span class="archive-category">Fact-Checking</span>
+                                    <span class="archive-date"><i class="fas fa-calendar"></i> 03/03/2026</span>
+                                </div>
+                                <h4 class="archive-title">
+                                    <a href="#">Prefeito de Itapema afirma que obra foi entregue no prazo</a>
+                                </h4>
+                                <p class="archive-excerpt">Verificamos a cronologia completa do projeto e comparamos com o contrato.</p>
+                                <div class="archive-footer">
+                                    <span class="archive-stats">
+                                        <span><i class="fas fa-eye"></i> 2.340</span>
+                                        <span><i class="fas fa-comment"></i> 15</span>
+                                    </span>
+                                    <span>Redação</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="timeline-year">
+                        <h3>2025</h3>
+                        <div class="timeline-grid">
+                            <article class="archive-card">
+                                <div class="archive-meta">
+                                    <span class="archive-category">Política</span>
+                                    <span class="archive-date"><i class="fas fa-calendar"></i> 15/12/2025</span>
+                                </div>
+                                <h4 class="archive-title">
+                                    <a href="#">Balanço do ano na Câmara de Vereadores</a>
+                                </h4>
+                                <p class="archive-excerpt">Levantamento mostra que 78 projetos foram votados em 2025.</p>
+                                <div class="archive-footer">
+                                    <span class="archive-stats">
+                                        <span><i class="fas fa-eye"></i> 1.890</span>
+                                        <span><i class="fas fa-comment"></i> 9</span>
+                                    </span>
+                                    <span>Ana Beatriz</span>
+                                </div>
+                            </article>
+
+                            <article class="archive-card">
+                                <div class="archive-meta">
+                                    <span class="archive-category">Podcast</span>
+                                    <span class="archive-date"><i class="fas fa-calendar"></i> 10/11/2025</span>
+                                </div>
+                                <h4 class="archive-title">
+                                    <a href="#">Entrevista com o Secretário de Turismo</a>
+                                </h4>
+                                <p class="archive-excerpt">Discussão sobre os desafios do setor na Costa Esmeralda.</p>
+                                <div class="archive-footer">
+                                    <span class="archive-stats">
+                                        <span><i class="fas fa-eye"></i> 3.450</span>
+                                        <span><i class="fas fa-comment"></i> 23</span>
+                                    </span>
+                                    <span>Carlos Mendes</span>
+                                </div>
+                            </article>
+
+                            <article class="archive-card">
+                                <div class="archive-meta">
+                                    <span class="archive-category">Explica</span>
+                                    <span class="archive-date"><i class="fas fa-calendar"></i> 05/09/2025</span>
+                                </div>
+                                <h4 class="archive-title">
+                                    <a href="#">Como funciona o orçamento público municipal</a>
+                                </h4>
+                                <p class="archive-excerpt">Guia completo sobre PPA, LDO e LOA.</p>
+                                <div class="archive-footer">
+                                    <span class="archive-stats">
+                                        <span><i class="fas fa-eye"></i> 4.567</span>
+                                        <span><i class="fas fa-comment"></i> 18</span>
+                                    </span>
+                                    <span>Redação</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="timeline-year">
+                        <h3>2024</h3>
+                        <div class="timeline-grid">
+                            <article class="archive-card">
+                                <div class="archive-meta">
+                                    <span class="archive-category">Notícias</span>
+                                    <span class="archive-date"><i class="fas fa-calendar"></i> 20/08/2024</span>
+                                </div>
+                                <h4 class="archive-title">
+                                    <a href="#">Primeira matéria do Big News</a>
+                                </h4>
+                                <p class="archive-excerpt">O início do projeto que viria a se tornar referência na região.</p>
+                                <div class="archive-footer">
+                                    <span class="archive-stats">
+                                        <span><i class="fas fa-eye"></i> 12.890</span>
+                                        <span><i class="fas fa-comment"></i> 67</span>
+                                    </span>
+                                    <span>Fundação</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navegação mensal -->
+                <div class="monthly-section">
+                    <div class="monthly-header">
+                        <h2 style="font-size: 1.5rem; color: var(--primary);">Navegue por mês</h2>
+                        <div class="monthly-nav">
+                            <button id="prev-year"><i class="fas fa-chevron-left"></i></button>
+                            <span id="current-year-display">2026</span>
+                            <button id="next-year"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="months-grid" id="months-grid">
+                        <div class="month-card" data-month="1">
+                            <div class="month-name">Janeiro</div>
+                            <div class="month-count">12 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="2">
+                            <div class="month-name">Fevereiro</div>
+                            <div class="month-count">18 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="3">
+                            <div class="month-name">Março</div>
+                            <div class="month-count">9 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="4">
+                            <div class="month-name">Abril</div>
+                            <div class="month-count">15 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="5">
+                            <div class="month-name">Maio</div>
+                            <div class="month-count">21 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="6">
+                            <div class="month-name">Junho</div>
+                            <div class="month-count">14 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="7">
+                            <div class="month-name">Julho</div>
+                            <div class="month-count">10 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="8">
+                            <div class="month-name">Agosto</div>
+                            <div class="month-count">22 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="9">
+                            <div class="month-name">Setembro</div>
+                            <div class="month-count">17 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="10">
+                            <div class="month-name">Outubro</div>
+                            <div class="month-count">13 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="11">
+                            <div class="month-name">Novembro</div>
+                            <div class="month-count">19 publicações</div>
+                        </div>
+                        <div class="month-card" data-month="12">
+                            <div class="month-name">Dezembro</div>
+                            <div class="month-count">16 publicações</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mais populares do arquivo -->
+                <h2 style="font-size: 1.5rem; color: var(--primary); margin: 3rem 0 2rem;">Mais lidos do arquivo</h2>
+                
+                <div class="popular-grid">
+                    <div class="popular-item">
+                        <div class="popular-rank">1</div>
+                        <div class="popular-title">Como funciona a Câmara de Vereadores</div>
+                        <div class="popular-views">12.890 visualizações</div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-rank">2</div>
+                        <div class="popular-title">Ranking de transparência 2026</div>
+                        <div class="popular-views">9.876 visualizações</div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-rank">3</div>
+                        <div class="popular-title">Entrevista com Prefeito de Itapema</div>
+                        <div class="popular-views">8.543 visualizações</div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-rank">4</div>
+                        <div class="popular-title">Guia do eleitor 2026</div>
+                        <div class="popular-views">7.234 visualizações</div>
+                    </div>
+                </div>
+
+                
+                <!-- COMPARTILHAR PÁGINA -->
+                <div class="share-container">
+                    <span class="share-label"><i class="fas fa-share-alt"></i> Compartilhe esta página:</span>
+                    <div class="share-buttons">
+                        <a href="https://wa.me/?text=Confira%20o%20Big%20News%20-%20Costa%20Esmeralda%20https%3A%2F%2Fbignewssc.com.br%2Farquivo.html" target="_blank" class="share-btn share-whatsapp" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbignewssc.com.br%2Farquivo.html" target="_blank" class="share-btn share-facebook" aria-label="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?text=Confira%20o%20arquivo%20do%20Big%20News%20-%20Costa%20Esmeralda&url=https%3A%2F%2Fbignewssc.com.br%2Farquivo.html" target="_blank" class="share-btn share-twitter" aria-label="Compartilhar no Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/share/url?url=https%3A%2F%2Fbignewssc.com.br%2Farquivo.html&text=Confira%20o%20arquivo%20do%20Big%20News" target="_blank" class="share-btn share-telegram" aria-label="Compartilhar no Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fbignewssc.com.br%2Farquivo.html" target="_blank" class="share-btn share-linkedin" aria-label="Compartilhar no LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Botão carregar mais -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn btn-outline" id="load-more">
+                        <i class="fas fa-plus"></i> Carregar mais publicações
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-title">Big News</div>
+                    <p>Portal de notícias e análises da Costa Esmeralda. Informação que constrói opinião.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Seções</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="analises.html">Análises</a></li>
+                        <li><a href="fact-checking.html">Fact-Checking</a></li>
+                        <li><a href="politica.html">Política</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="explica.html">Explica</a></li>
+                        <li><a href="arquivo.html">Arquivo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Região</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Itapema</a></li>
+                        <li><a href="#">Porto Belo</a></li>
+                        <li><a href="#">Bombinhas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Institucional</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Metodologia</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Big News. Todos os direitos reservados.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Atualizar data
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('pt-BR', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Filtros rápidos
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                console.log('Filtrar por:', filter);
+                // Aqui entraria lógica de filtro real
+            });
+        });
+
+        // Navegação mensal
+        let currentYear = 2026;
+        const yearDisplay = document.getElementById('current-year-display');
+        
+        document.getElementById('prev-year').addEventListener('click', () => {
+            currentYear--;
+            yearDisplay.textContent = currentYear;
+            alert('Em produção: carregar publicações de ' + currentYear);
+        });
+
+        document.getElementById('next-year').addEventListener('click', () => {
+            currentYear++;
+            yearDisplay.textContent = currentYear;
+            alert('Em produção: carregar publicações de ' + currentYear);
+        });
+
+        // Clique nos meses
+        document.querySelectorAll('.month-card').forEach(month => {
+            month.addEventListener('click', function() {
+                const monthName = this.querySelector('.month-name').textContent;
+                alert('Em produção: mostrar publicações de ' + monthName + ' de ' + currentYear);
+            });
+        });
+
+        // Busca
+        document.getElementById('search-btn').addEventListener('click', () => {
+            const term = document.getElementById('search-input').value;
+            const category = document.getElementById('search-category').value;
+            const period = document.getElementById('search-period').value;
+            
+            let message = 'Buscando por:';
+            if (term) message += ` "${term}"`;
+            if (category) message += ` na categoria ${category}`;
+            if (period) message += ` em ${period}`;
+            
+            alert(message);
+        });
+
+        // Carregar mais
+        document.getElementById('load-more').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Carregando...';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-plus"></i> Carregar mais publicações';
+                alert('Em produção: carregaria mais 10 publicações');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

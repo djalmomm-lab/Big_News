@@ -1,0 +1,6 @@
+bignews-sc/
+├── 📄 index.html          (seu site principal - já temos)
+├── 📄 README.md           (documentação - já temos)
+├── 📄 manifest.json       (criar agora)
+├── 📄 sw.js               (criar agora)
+└── 📄 offline.html        (opcional - criar se quiser)
